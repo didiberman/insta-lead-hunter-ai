@@ -41,14 +41,3 @@ An AI-powered tool designed to help businesses and individuals find targeted lea
 
 The application should now be running locally.
 
-## Contributing:
-
-(Optional section - add instructions for how others can contribute)
-
-## License:
-
-(Optional section - add your project's license information)
-
-## Contact:
-
-(Optional section - add your contact information or links)
