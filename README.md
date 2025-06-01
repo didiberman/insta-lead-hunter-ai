@@ -1,73 +1,54 @@
-# Welcome to your Lovable project
+# Insta Lead Hunter AI
 
-## Project info
+An AI-powered tool designed to help businesses and individuals find targeted leads on Instagram efficiently. Simply provide details about your business, ideal client, challenges, and desired results, and the bot will generate a list of potential leads with relevant information like handle, engagement score, and reason for the match.
 
-**URL**: https://lovable.dev/projects/9caabfce-a59b-44de-b2fe-77efa63e1fa3
+## Features:
 
-## How can I edit this code?
+- AI-powered lead generation based on user input.
+- Targeted search based on ideal client profile.
+- Provides lead details including handle, score, followers, and engagement.
+- Built with React, TypeScript, Tailwind CSS, and shadcn-ui for a modern and responsive user interface.
 
-There are several ways of editing your application.
+## Technologies Used:
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/9caabfce-a59b-44de-b2fe-77efa63e1fa3) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
 - React
-- shadcn-ui
+- TypeScript
+- Vite
 - Tailwind CSS
+- shadcn-ui
+- (Mention any backend technologies or APIs used if applicable - I couldn't determine this from the frontend code alone)
 
-## How can I deploy this project?
+## Getting Started:
 
-Simply open [Lovable](https://lovable.dev/projects/9caabfce-a59b-44de-b2fe-77efa63e1fa3) and click on Share -> Publish.
+(Assuming standard Node.js/npm setup)
 
-## Can I connect a custom domain to my Lovable project?
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/YOUR_GITHUB_USERNAME/insta-lead-hunter-ai.git
+    ```
+2.  **Navigate to the project directory:**
+    ```bash
+    cd insta-lead-hunter-ai
+    ```
+3.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+4.  **Start the development server:**
+    ```bash
+    npm run dev
+    ```
 
-Yes, you can!
+The application should now be running locally.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Contributing:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+(Optional section - add instructions for how others can contribute)
+
+## License:
+
+(Optional section - add your project's license information)
+
+## Contact:
+
+(Optional section - add your contact information or links)
