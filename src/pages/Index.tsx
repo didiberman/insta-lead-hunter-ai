@@ -102,38 +102,50 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse delay-2000"></div>
+      </div>
+
       {/* Header Section */}
-      <header className="relative z-10 bg-white/80 backdrop-blur-sm border-b border-gray-100 sticky top-0">
+      <header className="relative z-10 bg-black/20 backdrop-blur-md border-b border-white/10 sticky top-0">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/25">
                 <span className="text-white font-bold text-lg">S</span>
               </div>
-              <span className="text-xl font-bold text-gray-800">Sam's Lead Gen Bot</span>
+              <span className="text-xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                Sam's Lead Gen Bot
+              </span>
             </div>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="py-16 px-4">
+      <section className="py-20 px-4 relative z-10">
         <div className="container mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
-            AI-Powered Instagram
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent block">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <span className="bg-gradient-to-r from-white via-gray-100 to-gray-300 bg-clip-text text-transparent">
+              AI-Powered Instagram
+            </span>
+            <br />
+            <span className="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
               Lead Generator
             </span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto">
-            Find your perfect clients in minutes, not hours. 🔍
+          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
+            Find your perfect clients in minutes, not hours. 🔍✨
           </p>
         </div>
       </section>
 
       {/* Form Section */}
-      <section className="py-8 px-4">
+      <section className="py-8 px-4 relative z-10">
         <div className="container mx-auto">
           <LeadForm onSubmit={handleFormSubmit} isLoading={isLoading} />
         </div>
@@ -141,7 +153,7 @@ const Index = () => {
 
       {/* Results Section */}
       {showResults && (
-        <section id="results-section" className="py-16 px-4 bg-gradient-to-b from-transparent to-blue-50/50">
+        <section id="results-section" className="py-16 px-4 relative z-10">
           <div className="container mx-auto">
             <LeadResults leads={leads} />
           </div>
@@ -149,10 +161,10 @@ const Index = () => {
       )}
 
       {/* Footer */}
-      <footer className="py-8 px-4 bg-gray-50 border-t border-gray-100 mt-16">
+      <footer className="py-8 px-4 bg-black/20 backdrop-blur-md border-t border-white/10 mt-16 relative z-10">
         <div className="container mx-auto text-center">
-          <p className="text-gray-600">
-            © 2024 Sam's Lead Generation Bot. Powered by AI 🤖
+          <p className="text-gray-400">
+            © 2024 Sam's Lead Generation Bot. Powered by AI 🤖✨
           </p>
         </div>
       </footer>

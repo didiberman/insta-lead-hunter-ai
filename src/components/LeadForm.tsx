@@ -41,19 +41,23 @@ const LeadForm: React.FC<LeadFormProps> = ({ onSubmit, isLoading }) => {
   const isFormValid = formData.businessTitle && formData.idealClient && formData.keyChallenges && formData.desiredResults;
 
   return (
-    <Card className="w-full max-w-2xl mx-auto shadow-xl border-0 bg-white/80 backdrop-blur-sm">
-      <CardHeader className="text-center pb-6">
-        <CardTitle className="text-2xl font-bold text-gray-800 mb-2">
+    <Card className="w-full max-w-2xl mx-auto shadow-2xl border border-white/20 bg-black/40 backdrop-blur-xl relative overflow-hidden">
+      {/* Shiny overlay effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse"></div>
+      
+      <CardHeader className="text-center pb-6 relative z-10">
+        <CardTitle className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent mb-2">
           Tell us about your business 🏢
         </CardTitle>
-        <CardDescription className="text-gray-600 text-lg">
+        <CardDescription className="text-gray-300 text-lg">
           Answer a few quick questions and let AI do the lead hunting for you.
         </CardDescription>
       </CardHeader>
-      <CardContent>
+      
+      <CardContent className="relative z-10">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="businessTitle" className="text-sm font-medium text-gray-700">
+            <Label htmlFor="businessTitle" className="text-sm font-medium text-gray-200">
               Business title/niche ✨
             </Label>
             <Input
@@ -61,13 +65,13 @@ const LeadForm: React.FC<LeadFormProps> = ({ onSubmit, isLoading }) => {
               value={formData.businessTitle}
               onChange={(e) => handleInputChange('businessTitle', e.target.value)}
               placeholder="e.g., Digital Marketing Agency, Fitness Coach, E-commerce Store"
-              className="transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-purple-400 focus:ring-purple-400/50 backdrop-blur-sm transition-all duration-200"
               required
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="idealClient" className="text-sm font-medium text-gray-700">
+            <Label htmlFor="idealClient" className="text-sm font-medium text-gray-200">
               Ideal client description 🎯
             </Label>
             <Input
@@ -75,13 +79,13 @@ const LeadForm: React.FC<LeadFormProps> = ({ onSubmit, isLoading }) => {
               value={formData.idealClient}
               onChange={(e) => handleInputChange('idealClient', e.target.value)}
               placeholder="e.g., Small business owners with 10-50 employees looking to scale"
-              className="transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-purple-400 focus:ring-purple-400/50 backdrop-blur-sm transition-all duration-200"
               required
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="keyChallenges" className="text-sm font-medium text-gray-700">
+            <Label htmlFor="keyChallenges" className="text-sm font-medium text-gray-200">
               Key challenges you solve 🔧
             </Label>
             <Input
@@ -89,13 +93,13 @@ const LeadForm: React.FC<LeadFormProps> = ({ onSubmit, isLoading }) => {
               value={formData.keyChallenges}
               onChange={(e) => handleInputChange('keyChallenges', e.target.value)}
               placeholder="e.g., Increase online visibility, automate marketing, improve conversion rates"
-              className="transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-purple-400 focus:ring-purple-400/50 backdrop-blur-sm transition-all duration-200"
               required
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="desiredResults" className="text-sm font-medium text-gray-700">
+            <Label htmlFor="desiredResults" className="text-sm font-medium text-gray-200">
               Desired results 📈
             </Label>
             <Input
@@ -103,13 +107,13 @@ const LeadForm: React.FC<LeadFormProps> = ({ onSubmit, isLoading }) => {
               value={formData.desiredResults}
               onChange={(e) => handleInputChange('desiredResults', e.target.value)}
               placeholder="e.g., 50% more qualified leads, double social media engagement"
-              className="transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-purple-400 focus:ring-purple-400/50 backdrop-blur-sm transition-all duration-200"
               required
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="extraInfo" className="text-sm font-medium text-gray-700">
+            <Label htmlFor="extraInfo" className="text-sm font-medium text-gray-200">
               Extra info / keywords (optional) 💡
             </Label>
             <Textarea
@@ -117,7 +121,7 @@ const LeadForm: React.FC<LeadFormProps> = ({ onSubmit, isLoading }) => {
               value={formData.extraInfo}
               onChange={(e) => handleInputChange('extraInfo', e.target.value)}
               placeholder="Any additional details that might help us find better leads..."
-              className="transition-all duration-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent min-h-[80px]"
+              className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-purple-400 focus:ring-purple-400/50 backdrop-blur-sm transition-all duration-200 min-h-[80px]"
               rows={3}
             />
           </div>
@@ -125,15 +129,17 @@ const LeadForm: React.FC<LeadFormProps> = ({ onSubmit, isLoading }) => {
           <Button
             type="submit"
             disabled={!isFormValid || isLoading}
-            className="w-full h-12 text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50"
+            className="w-full h-12 text-lg font-semibold bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-600 hover:from-cyan-400 hover:via-purple-500 hover:to-pink-500 transition-all duration-300 shadow-lg shadow-purple-500/50 hover:shadow-purple-500/75 disabled:opacity-50 border-0 relative overflow-hidden"
           >
+            {/* Shiny button overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-1000"></div>
             {isLoading ? (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 relative z-10">
                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                 Generating Leads...
               </div>
             ) : (
-              'Generate Leads 🚀'
+              <span className="relative z-10">Generate Leads 🚀</span>
             )}
           </Button>
         </form>
